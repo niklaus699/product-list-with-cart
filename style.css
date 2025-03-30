@@ -155,8 +155,14 @@ h2 {
   border: 1px solid white;
   cursor: pointer;
 }
+.plus-btn {
+  padding: 5px 4px;
+  justify-content: center;
+  align-items: center;
+}
 .minus-btn {
   padding: 5px 4px;
+  align-items: center;
   justify-content: center;
 }
 
