@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body>
+    <div class="entire">
+      <div class="dessert-dump">
+        <h1>Desserts</h1>
+        <div id="dessertContainer"><!-- Javascript --></div>
+      </div>
+      <aside class="cart">
+        <h2>Your cart(0)</h2>
+        <img
+          src="./assets/images/illustration-empty-cart.svg"
+          alt=""
+          class="empty-cart-image"
+        />
+        <p class="empty-text">Your added items will appear here</p>
+      </aside>
+    </div>
+    <div id="modalBackdrop" class="modal-backdrop"></div>
+    <div id="confirmationModal" class="confirmation-modal">
+      <img class="order-confirmed-image" src="./assets/images/icon-order-confirmed.svg" alt="">
+      <h1>Order Confirmed!</h1>
+      <h3>We hope you enjoy your food! 🎉</h3>
+      <div id="confirmedItems" class="confirmed-items">
+        <!-- Items will be inserted here -->
+      </div>
+      <div class="confirmed-total">
+        <span>Order Total</span>
+        <span id="confirmedTotal">$0.00</span>
+      </div>
+      <!-- <p class="carbon-neutral">
+        <img src="./assets/images/icon-carbon-neutral.svg" alt="" />
+        This is a carbon-neutral delivery
+      </p> -->
+      <button id="startNewOrderBtn" class="start-new-order-btn">
+        Start New Order
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

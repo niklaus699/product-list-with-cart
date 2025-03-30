@@ -1,0 +1,342 @@
+@font-face {
+  font-family: RedHatBold;
+  src: url(./assets/fonts/static/RedHatText-Bold.ttf);
+}
+@font-face {
+  font-family: RedHatRegular;
+  src: url(./assets/fonts/static/RedHatText-Regular.ttf);
+}
+
+@font-face {
+  font-family: RedHatSemiBold;
+  src: url(./assets/fonts/static/RedHatText-SemiBold.ttf);
+}
+
+body {
+  background-color: hsl(13, 31%, 94%);
+}
+
+h1, h2{
+  font-family: RedHatBold;
+}
+h2 {
+  color: hsl(14, 86%, 42%);
+}
+
+
+
+.entire {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  margin: 40px;
+}
+
+#dessertContainer {
+  display: grid;
+  /* width: 100%; */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.dessert-card {
+  position: relative;
+  display: grid;
+  align-items: center;
+  height: 350px; /* Adjust based on your content */
+}
+.dessert-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart-btn {
+  width: 70%;
+  font-family: RedHatRegular;
+  position: absolute; /* Remove absolute positioning */
+  top: 55%;
+  align-items: center;
+  justify-self: center;/* Center horizontally */
+  display: flex;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 18px;
+  justify-content: space-around;
+  transition: all 0.3s ease;
+}
+
+.dessert-info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.dessert-info-div p {
+  font-family: RedHatRegular;
+  color: hsl(12, 20%, 44%);
+}
+
+.dessert-info-div span {
+  font-family: RedHatSemiBold;
+}
+.dessert-price {
+  color: hsl(14, 86%, 42%);
+}
+
+.cart {
+  display: grid;
+  background-color: hsl(20, 50%, 98%);
+  height: fit-content;
+  width: auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.cart-filled {
+  gap: 1rem;
+}
+
+.price-info {
+  display: flex;
+  justify-content: space-between;
+}
+.count {
+  color: hsl(14, 86%, 42%);
+  font-family: RedHatBold;
+}
+.purchase-info {
+  display: grid;
+}
+
+.purchase-info h3 {
+  font-family: RedHatSemiBold;;
+}
+.item-price {
+  color: hsl(12, 20%, 44%);
+  font-family: RedHatRegular;
+}
+.item-amount {
+  color: hsl(14, 65%, 9%);
+  font-family: RedHatSemiBold;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-cart {
+  background-color: inherit;
+  border: 1px solid gray;
+  border-radius: 50%;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.empty-cart-image {
+  justify-self: center;
+}
+
+.empty-text {
+  justify-self: center;
+}
+
+.minus-btn, .plus-btn {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  border-radius: 50%;
+  background-color: inherit;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.minus-btn {
+  padding: 5px 4px;
+  justify-content: center;
+}
+
+
+.active {
+  justify-content: space-between;
+  color: white;
+  background-color: hsl(14, 86%, 42%);
+  border: none;
+}
+
+.desert-image-focus {
+  border: 2px solid hsl(14, 86%, 42%);
+  transform: scale(0.95);
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-total h4 {
+  font-family: RedHatRegular;
+  color: hsl(12, 20%, 44%);
+}
+.cart-total span {
+  font-family: RedHatBold;
+  font-size: 20px;
+}
+.delivery-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(13, 31%, 94%);
+  border-radius: 13px;
+  column-gap: 5px;
+}
+
+.delivery-message h5 {
+  font-family: RedHatRegular;
+}
+.inner-delivery-text {
+  font-family: RedHatSemiBold;
+}
+#confirmOrderBtn {
+  background-color: hsl(14, 86%, 42%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: none;
+  padding: 15px 0px;
+  cursor: pointer;
+}
+#confirmOrderBtn span {
+  color: white;
+  font-family: RedHatSemiBold;
+}
+
+
+/* Add these styles to your CSS */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.confirmation-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 1001;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.order-confirmed-image {
+  object-fit: cover;
+  margin: 0.3rem 0rem;
+}
+
+.confirmation-modal h1 {
+  font-family: RedHatBold;
+  color: black;
+}
+
+.confirmation-modal h3 {
+  font-family: RedHatRegular;
+  color: gray;
+}
+
+.confirmed-items {
+  margin: 1.5rem 0;
+}
+
+.confirmed-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+.confirmed-content {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.confirmed-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+#confirmedTotal {
+  font-family: RedHatBold;
+  font-size: 20px;
+}
+
+.start-new-order-btn {
+  background: hsl(14, 86%, 42%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  width: 100%;
+  font-family: RedHatSemiBold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.confirmation-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.confirmed-name {
+  font-family: RedHatSemiBold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.price-contents {
+  display: flex;
+  column-gap: 10px;
+}
+
+/* .total-span {
+  font-family: RedHatBold;
+  font-size: 20px;
+} */
+
+@media (max-width: 780px) {
+  .entire {
+    grid-template-columns: 1fr;
+    margin: 5px 2px;
+  }
+  #desserts-container {
+    grid-template-columns: 1fr;
+  }
+  .confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
