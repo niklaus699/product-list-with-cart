@@ -252,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
   `
       )
       .join("");
+      
 
     // Set total
     const totals = calculateTotals();

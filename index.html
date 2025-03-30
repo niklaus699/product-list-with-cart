@@ -33,23 +33,25 @@
     </div>
     <div id="modalBackdrop" class="modal-backdrop"></div>
     <div id="confirmationModal" class="confirmation-modal">
-      <img class="order-confirmed-image" src="./assets/images/icon-order-confirmed.svg" alt="">
-      <h1>Order Confirmed!!!</h1>
-      <h3>We hope you enjoy your food! 🎉</h3>
+      <div class="modal-header">
+        <img class="order-confirmed-image" src="./assets/images/icon-order-confirmed.svg" alt="">
+        <h1>Order Confirmed!!!</h1>
+        <h3>We hope you enjoy your food! 🎉</h3>
+      </div>
+
       <div id="confirmedItems" class="confirmed-items">
         <!-- Items will be inserted here -->
       </div>
-      <div class="confirmed-total">
-        <span>Order Total</span>
-        <span id="confirmedTotal">$0.00</span>
+      <div class="modal-footer">
+        <div class="confirmed-total">
+          <span>Order Total</span>
+          <span id="confirmedTotal">$0.00</span>
+        </div>
+        <button id="startNewOrderBtn" class="start-new-order-btn">
+          Start New Order
+        </button>
       </div>
-      <!-- <p class="carbon-neutral">
-        <img src="./assets/images/icon-carbon-neutral.svg" alt="" />
-        This is a carbon-neutral delivery
-      </p> -->
-      <button id="startNewOrderBtn" class="start-new-order-btn">
-        Start New Order
-      </button>
+      
     </div>
 
     <script src="script.js"></script>
