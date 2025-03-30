@@ -340,7 +340,7 @@ h2 {
   }
   .confirmation-modal {
     display: none;
-    position: sticky;
+    position: absolute;
     top: 60%;
     left: 50%;
     /* transform: translate(-50%, -50%); */
