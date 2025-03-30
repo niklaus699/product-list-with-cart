@@ -338,6 +338,9 @@ h2 {
   #desserts-container {
     grid-template-columns: 1fr;
   }
+  .modal-backdrop {
+    position: relative;
+  }
   .confirmation-modal {
     display: none;
     position: absolute;
