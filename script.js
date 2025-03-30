@@ -227,40 +227,56 @@ document.addEventListener("DOMContentLoaded", function () {
   function showConfirmationModal() {
     const modalBackdrop = document.getElementById("modalBackdrop");
     const confirmationModal = document.getElementById("confirmationModal");
-    const confirmedItems = document.getElementById("confirmedItems");
-    const confirmedTotal = document.getElementById("confirmedTotal");
-
-    // Populate items
-    confirmedItems.innerHTML = cartItems
-      .map(
-        (item) => `
-    <div class="confirmed-item">
-      <div class="confirmed-content">
-        <img src="${item.thumbnail}" class="confirmation-thumbnail" alt="${item.name}">
-        <div>
-          <span class="confirmed-name">${item.name}</span>
-          <div class="price-contents">
-            <span class="count">${item.quantity}x</span>
-            <span class="item-amount">@ $${item.price}</span>
-          </div>
-        </div>
-    </div>
-      <span class="total-span">$${(item.quantity * item.price).toFixed(
-        2
-      )}</span>
-    </div>
-  `
-      )
-      .join("");
-      
-
     // Set total
     const totals = calculateTotals();
-    confirmedTotal.textContent = `$${totals.totalCost.toFixed(2)}`;
+    confirmationModal.innerHTML = `
+      <div class="modal-header">
+        <h1>Order Confirmed! 🎉</h1>
+        <h3>We hope you enjoy your food!</h3>
+      </div>
+      
+      <div class="confirmed-items">
+        ${cartItems
+          .map(
+            (item) => `
+          <div class="confirmed-item">
+            <div class="confirmed-content">
+              <img src="${
+                item.thumbnail
+              }" class="confirmation-thumbnail" alt="${item.name}">
+              <div>
+                <span class="confirmed-name">${item.name}</span>
+                <div class="price-contents">
+                  <span class="count">${item.quantity}x</span>
+                  <span class="item-price">@ $${item.price.toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+            <span class="item-amount">$${(item.quantity * item.price).toFixed(
+              2
+            )}</span>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+
+      <div class="modal-footer">
+        <div class="confirmed-total">
+          <span>Order Total</span>
+          <span id="confirmedTotal">$${totals.totalCost.toFixed(2)}</span>
+        </div>
+        <button id="startNewOrderBtn" class="start-new-order-btn">Start New Order</button>
+      </div>
+    `;
+
+    const newOrderBtn = confirmationModal.querySelector("#startNewOrderBtn");
+    newOrderBtn.addEventListener("click", resetOrder);
 
     // Show modal
     modalBackdrop.style.display = "block";
-    confirmationModal.style.display = "block";
+    confirmationModal.style.display = "flex";
+    confirmationModal.style.flexDirection= "column";
   }
 
   function resetOrder() {
@@ -280,9 +296,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modalBackdrop").style.display = "none";
     document.getElementById("confirmationModal").style.display = "none";
   }
-
-  // Add event listener for new order button
-  document
-    .getElementById("startNewOrderBtn")
-    .addEventListener("click", resetOrder);
 });

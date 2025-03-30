@@ -276,6 +276,7 @@ h2 {
   justify-content: space-between;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
+  align-items: center;
   border-bottom: 1px solid #eee;
 }
 .confirmed-content {
@@ -326,11 +327,6 @@ h2 {
 }
 
 
-/* .total-span {
-  font-family: RedHatBold;
-  font-size: 20px;
-} */
-
 @media (max-width: 780px) {
   .entire {
     grid-template-columns: 1fr;
@@ -346,8 +342,6 @@ h2 {
 .confirmation-modal {
   /* ... existing styles ... */
   max-height: 90vh; /* Limit modal height */
-  display: flex;
-  flex-direction: column;
 }
 
 .confirmed-items {
